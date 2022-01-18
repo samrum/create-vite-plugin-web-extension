@@ -16,7 +16,8 @@
   "scripts": {
     "build": "esbuild --bundle index.js --format=cjs --platform=node --outfile=create.cjs",
     "lint": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "standard-version --sign"
   },
   "standard-version": {
     "scripts": {
