@@ -1,0 +1,63 @@
+{
+  "name": "@samrum/create-vite-plugin-web-extension",
+  "version": "0.9.0",
+  "description": "",
+  "type": "module",
+  "bin": {
+    "@samrum/create-vite-plugin-web-extension": "create.cjs"
+  },
+  "files": [
+    "create.cjs",
+    "template"
+  ],
+  "engines": {
+    "node": "^14.13.1 || >=16.0.0"
+  },
+  "scripts": {
+    "build": "esbuild --bundle index.js --format=cjs --platform=node --outfile=create.cjs",
+    "lint": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "standard-version": {
+    "scripts": {
+      "prerelease": "pnpm build"
+    }
+  },
+  "keywords": [
+    "create",
+    "vite",
+    "vite-plugin",
+    "web",
+    "extension",
+    "browser",
+    "chrome",
+    "firefox",
+    "edge",
+    "manifest"
+  ],
+  "author": "Ruben Medina <dev@rubenmedina.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samrum/create-vite-plugin-web-extension.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samrum/create-vite-plugin-web-extension/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "kolorist": "^1.5.1",
+    "minimist": "^1.2.5",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.11",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.7",
+    "prettier": "2.5.1"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue,json}": [
+      "prettier --write"
+    ]
+  }
+}

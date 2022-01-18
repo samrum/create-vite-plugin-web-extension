@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["es6", "dom"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noEmitOnError": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "strict": true,
+    "target": "es2017",
+    "skipLibCheck": true,
+    "types": ["vite/client"]
+  },
+  "exclude": ["dist", "node_modules"],
+  "include": ["src/**/*"]
+}

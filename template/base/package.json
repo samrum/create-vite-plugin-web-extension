@@ -1,0 +1,26 @@
+{
+  "name": "vite-web-extension",
+  "displayName": "Vite Web Extension",
+  "version": "1.0.0",
+  "description": "A @samrum/vite-plugin-web-extension web extension",
+  "scripts": {
+    "build": "vite build",
+    "watch": "vite build --watch",
+    "dev": "vite",
+    "serve:firefox": "web-ext run --start-url \"about:debugging#/runtime/this-firefox\"  --source-dir ./dist/",
+    "serve:chrome": "web-ext run -t chromium --start-url \"https://google.com\" --source-dir ./dist/",
+    "lint": "prettier --write ."
+  },
+  "author": "Ruben Medina <dev@rubenmedina.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@samrum/vite-plugin-web-extension": "^0.1.1",
+    "@types/webextension-polyfill": "^0.8.2",
+    "prettier": "2.5.1",
+    "vite": "2.7.10",
+    "web-ext": "^6.6.0"
+  },
+  "dependencies": {
+    "webextension-polyfill": "^0.8.0"
+  }
+}
