@@ -54,7 +54,8 @@
     "esbuild": "^0.14.11",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.7",
-    "prettier": "2.5.1"
+    "prettier": "2.5.1",
+    "standard-version": "^9.3.2"
   },
   "lint-staged": {
     "*.{js,ts,vue,json}": [
