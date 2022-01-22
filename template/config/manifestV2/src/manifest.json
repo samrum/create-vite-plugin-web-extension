@@ -1,6 +1,6 @@
 {
   "background": {
-    "scripts": ["src/background/script.js"],
+    "scripts": ["src/background/index.js"],
     "persistent": false
   },
   "content_scripts": [
