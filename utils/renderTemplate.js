@@ -41,15 +41,6 @@ function renderTemplate(src, dest) {
     return;
   }
 
-  if (filename === "manifest.json" && fs.existsSync(dest)) {
-    // merge instead of overwriting
-    const existing = JSON.parse(fs.readFileSync(dest));
-    const newManifest = JSON.parse(fs.readFileSync(src));
-    const manifest = deepMerge(existing, newManifest);
-    fs.writeFileSync(dest, JSON.stringify(manifest, null, 2) + "\n");
-    return;
-  }
-
   if (filename.startsWith("_")) {
     // rename `_file` to `.file`
     dest = path.resolve(path.dirname(dest), filename.replace(/^_/, "."));

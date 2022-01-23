@@ -237,7 +237,7 @@ async function init() {
 `
             )
             .replace(
-              `import manifest from "./src/manifest.json";`,
+              `import manifest from "./src/manifest";`,
               `import { ManifestV2, ManifestV3 } from "./src/manifest";`
             )
             .replace(
