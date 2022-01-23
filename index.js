@@ -239,6 +239,10 @@ async function init() {
               `import { ManifestV2, ManifestV3 } from "./src/manifest";`
             )
             .replace(
+              `import manifest from "./src/manifest.js";`,
+              `import { ManifestV2, ManifestV3 } from "./src/manifest.js";`
+            )
+            .replace(
               `import { defineConfig } from "vite";`,
               `import { defineConfig, loadEnv } from "vite";`
             );

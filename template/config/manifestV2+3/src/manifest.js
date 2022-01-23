@@ -1,14 +1,10 @@
-import pkg from "./../package.json";
-
 const sharedManifest = {
-  author: pkg.author,
   content_scripts: [
     {
       js: ["src/contentScript/primary/main.js"],
       matches: ["*://*/*"],
     },
   ],
-  description: pkg.description,
   icons: {
     16: "icons/16.png",
     19: "icons/19.png",
@@ -21,13 +17,11 @@ const sharedManifest = {
     256: "icons/256.png",
     512: "icons/512.png",
   },
-  name: pkg.displayName ?? pkg.name,
   options_ui: {
     page: "src/options/index.html",
     open_in_tab: true,
   },
   permissions: [],
-  version: pkg.version,
 };
 
 const browserAction = {
