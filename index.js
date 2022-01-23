@@ -211,12 +211,10 @@ async function init() {
 
   // Add configs
   render(`config/manifestV${manifestVersion}`);
-  if (needsTypeScript) {
-    render("config/typescript");
-  }
 
   // Render framework template
-  render(`framework/${framework}`);
+  const frameworkTemplate = `${framework}${needsTypeScript ? "-ts" : ""}`;
+  render(`framework/${frameworkTemplate}`);
 
   // Cleanup.
 
@@ -291,15 +289,6 @@ async function init() {
             filepath,
             filepath.replace(/jsconfig\.json$/, "tsconfig.json")
           );
-        }
-
-        // update vue setup declarations
-        if (framework === "vue" && filepath.endsWith(".vue")) {
-          const content = fs
-            .readFileSync(filepath, "utf8")
-            .replace("script setup", `script setup lang="ts"`);
-
-          fs.writeFileSync(filepath, content);
         }
 
         // update manifest html files

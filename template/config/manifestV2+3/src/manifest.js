@@ -4,7 +4,7 @@ const sharedManifest = {
   author: pkg.author,
   content_scripts: [
     {
-      js: ["src/contentScript/primary/index.js"],
+      js: ["src/contentScript/primary/main.js"],
       matches: ["*://*/*"],
     },
   ],

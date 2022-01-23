@@ -9,11 +9,11 @@ export default {
     default_popup: "src/popup/index.html",
   },
   background: {
-    service_worker: "src/background/index.js",
+    service_worker: "src/background/main.js",
   },
   content_scripts: [
     {
-      js: ["src/contentScript/primary/index.js"],
+      js: ["src/contentScript/primary/main.js"],
       matches: ["*://*/*"],
     },
   ],

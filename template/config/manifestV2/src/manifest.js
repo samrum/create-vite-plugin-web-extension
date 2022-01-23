@@ -1,11 +1,11 @@
 export default {
   background: {
-    scripts: ["src/background/index.js"],
+    scripts: ["src/background/main.js"],
     persistent: false,
   },
   content_scripts: [
     {
-      js: ["src/contentScript/primary/index.js"],
+      js: ["src/contentScript/primary/main.js"],
       matches: ["*://*/*"],
     },
   ],

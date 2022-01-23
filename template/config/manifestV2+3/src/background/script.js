@@ -1,1 +1,1 @@
-import "./background";
+import "./main";
