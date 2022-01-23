@@ -330,7 +330,8 @@ async function init() {
     console.log(`  ${bold(green(`cd ${path.relative(cwd, root)}`))}`);
   }
   console.log(`  ${bold(green(getCommand(packageManager, "install")))}`);
-  console.log(`  ${bold(green(getCommand(packageManager, "dev")))}`);
+  console.log(`  ${bold(green(getCommand(packageManager, "build")))}`);
+  console.log(`  ${bold(green(getCommand(packageManager, "serve:chrome")))}`);
   console.log();
 }
 
