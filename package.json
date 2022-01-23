@@ -58,7 +58,7 @@
     "standard-version": "^9.3.2"
   },
   "lint-staged": {
-    "*.{js,ts,vue,json}": [
+    "*.{js,ts,vue,json,yml,md}": [
       "prettier --write"
     ]
   }
