@@ -223,7 +223,7 @@ async function init() {
       root,
       () => {},
       (filepath) => {
-        if (path.basename(filepath) === "vite.config.js") {
+        if (path.basename(filepath).startsWith("vite.config")) {
           const content = fs
             .readFileSync(filepath, "utf8")
             .replace(
