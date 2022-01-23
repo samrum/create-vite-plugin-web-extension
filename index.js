@@ -150,7 +150,7 @@ async function init() {
             { title: "Vanilla (None)", value: "vanilla" },
             { title: "Vue", value: "vue" },
             // { title: "React", value: "react" },
-            // { title: "Svelte", value: "svelte" },
+            { title: "Svelte", value: "svelte" },
             // { title: "Preact", value: "preact" },
           ],
           initial: 0,
