@@ -34,7 +34,10 @@
     "chrome",
     "firefox",
     "edge",
-    "manifest"
+    "manifest",
+    "vue",
+    "svelte",
+    "typescript"
   ],
   "author": "Ruben Medina <dev@rubenmedina.com>",
   "repository": {
