@@ -1,9 +1,9 @@
 <script lang="ts">
-import PageHeader from "~/lib/PageHeader.svelte";
+import PageContent from "~/lib/PageContent.svelte";
 </script>
 
 <main>
-  <PageHeader> Popup </PageHeader>
+  <PageContent> Popup </PageContent>
 </main>
 
 <style>

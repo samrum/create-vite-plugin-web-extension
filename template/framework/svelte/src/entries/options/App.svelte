@@ -1,9 +1,9 @@
 <script>
-import PageHeader from "~/lib/PageHeader.svelte";
+import PageContent from "~/lib/PageContent.svelte";
 </script>
 
 <main>
-  <PageHeader> Options </PageHeader>
+  <PageContent> Options </PageContent>
 </main>
 
 <style>

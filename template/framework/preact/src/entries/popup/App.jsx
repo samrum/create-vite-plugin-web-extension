@@ -1,10 +1,10 @@
-import PageHeader from "~/components/PageHeader";
+import PageContent from "~/components/PageContent";
 import "./App.css";
 
 function App() {
   return (
     <main>
-      <PageHeader>Popup</PageHeader>
+      <PageContent>Popup</PageContent>
     </main>
   );
 }

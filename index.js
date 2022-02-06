@@ -309,7 +309,10 @@ async function init() {
         }
 
         // Rename, remove js files matching ts file
-        if (filepath.endsWith(".js")) {
+        if (
+          filepath.endsWith(".js") &&
+          !filepath.endsWith("svelte.config.js")
+        ) {
           const tsFilePath = filepath.replace(/\.js$/, ".ts");
           if (fs.existsSync(tsFilePath)) {
             fs.unlinkSync(filepath);

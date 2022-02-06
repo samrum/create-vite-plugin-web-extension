@@ -1,11 +1,11 @@
 <template>
   <main>
-    <PageHeader> Options </PageHeader>
+    <PageContent> Options </PageContent>
   </main>
 </template>
 
 <script setup lang="ts">
-import PageHeader from "~/components/PageHeader.vue";
+import PageContent from "~/components/PageContent.vue";
 </script>
 
 <style>

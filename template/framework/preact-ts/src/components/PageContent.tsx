@@ -1,15 +1,19 @@
+import { useState } from "preact/hooks";
+import "./PageContent.css";
 import logo from "~/assets/logo.svg";
 
 function PageHeader(props) {
   const imageUrl = new URL(logo, import.meta.url).href;
 
+  const [count, setCount] = useState(0);
+
   return (
     <div>
       <img src={imageUrl} height="45" />
       <h1>{props.children}</h1>
-      <a href="https://vitejs.dev/guide/features.html" target="_blank">
-        Documentation
-      </a>
+      <button type="button" onClick={() => setCount((count) => count + 1)}>
+        Count: {count}
+      </button>
     </div>
   );
 }
