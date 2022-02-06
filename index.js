@@ -50,12 +50,14 @@ async function init() {
   const cwd = process.cwd();
   // possible options:
   // --default
-  // --typescript / --ts
-  // --manifestVersion
+  // --force
   // --framework
+  // --manifestVersion / --manifest
+  // --typescript / --ts
   const argv = minimist(process.argv.slice(2), {
     alias: {
       typescript: ["ts"],
+      manifestVersion: ["manifest"],
     },
     string: ["manifestVersion", "framework"],
     boolean: true,

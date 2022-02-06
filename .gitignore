@@ -3,3 +3,5 @@
 .DS_Store
 create.cjs
 **/web-extension/
+.pnpm-debug.log
+/playground/
