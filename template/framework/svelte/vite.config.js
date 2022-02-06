@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import webExtension from "@samrum/vite-plugin-web-extension";
-import path from "path";
 import { readFileSync } from "fs";
 import manifest from "./src/manifest.js";
 const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
@@ -23,7 +22,7 @@ export default defineConfig(() => {
     ],
     resolve: {
       alias: {
-        "~": path.resolve(__dirname, "./src"),
+        "~": new URL("./src", import.meta.url).pathname,
       },
     },
   };
