@@ -1,11 +1,11 @@
 export default {
   background: {
-    scripts: ["src/background/main.js"],
+    scripts: ["src/entries/background/main.js"],
     persistent: false,
   },
   content_scripts: [
     {
-      js: ["src/contentScript/primary/main.js"],
+      js: ["src/entries/contentScript/primary/main.js"],
       matches: ["*://*/*"],
     },
   ],
@@ -16,7 +16,7 @@ export default {
       32: "icons/32.png",
       38: "icons/38.png",
     },
-    default_popup: "src/popup/index.html",
+    default_popup: "src/entries/popup/index.html",
   },
   icons: {
     16: "icons/16.png",
@@ -34,7 +34,7 @@ export default {
   options_ui: {
     chrome_style: false,
     open_in_tab: true,
-    page: "src/options/index.html",
+    page: "src/entries/options/index.html",
   },
   permissions: ["*://*/*"],
 };

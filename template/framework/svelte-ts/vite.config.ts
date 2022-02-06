@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import webExtension from "@samrum/vite-plugin-web-extension";
+import path from "path";
 import manifest from "./src/manifest";
 import pkg from "./package.json";
 
@@ -19,5 +20,10 @@ export default defineConfig(() => {
         },
       }),
     ],
+    resolve: {
+      alias: {
+        "~": path.resolve(__dirname, "./src"),
+      },
+    },
   };
 });

@@ -1,7 +1,7 @@
 const sharedManifest = {
   content_scripts: [
     {
-      js: ["src/contentScript/primary/main.js"],
+      js: ["src/entries/contentScript/primary/main.js"],
       matches: ["*://*/*"],
     },
   ],
@@ -18,7 +18,7 @@ const sharedManifest = {
     512: "icons/512.png",
   },
   options_ui: {
-    page: "src/options/index.html",
+    page: "src/entries/options/index.html",
     open_in_tab: true,
   },
   permissions: [],
@@ -31,13 +31,13 @@ const browserAction = {
     32: "icons/32.png",
     38: "icons/38.png",
   },
-  default_popup: "src/popup/index.html",
+  default_popup: "src/entries/popup/index.html",
 };
 
 export const ManifestV2 = {
   ...sharedManifest,
   background: {
-    scripts: ["src/background/script.js"],
+    scripts: ["src/entries/background/script.js"],
     persistent: false,
   },
   browser_action: browserAction,
@@ -53,7 +53,7 @@ export const ManifestV3 = {
   ...sharedManifest,
   action: browserAction,
   background: {
-    service_worker: "src/background/serviceWorker.js",
+    service_worker: "src/entries/background/serviceWorker.js",
   },
   host_permissions: ["*://*/*"],
   manifest_version: 3,
