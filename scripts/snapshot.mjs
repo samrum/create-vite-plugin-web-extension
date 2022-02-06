@@ -11,7 +11,7 @@ const builds = [];
 
 (async () => {
   await exec("mkdir -p playground");
-  // await exec('rm -rf playground/*');
+  await exec("rm -rf playground/*");
 
   for (const framework of frameworks) {
     for (const manifest of manifestVersions) {

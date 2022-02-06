@@ -1,11 +1,11 @@
 <template>
   <main>
-    <PageHeader> Popup </PageHeader>
+    <PageContent> Popup </PageContent>
   </main>
 </template>
 
 <script setup>
-import PageHeader from "~/components/PageHeader.vue";
+import PageContent from "~/components/PageContent.vue";
 </script>
 
 <style>
