@@ -3,7 +3,7 @@ import { exec as execCallback } from "child_process";
 
 const exec = util.promisify(execCallback);
 
-const frameworks = ["vanilla", "vue", "svelte"];
+const frameworks = ["vanilla", "vue", "svelte", "react", "preact"];
 
 const manifestVersions = ["2", "3", "2+3"];
 

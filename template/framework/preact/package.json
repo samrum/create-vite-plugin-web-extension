@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "@preact/preset-vite": "^2.1.5"
+  },
+  "dependencies": {
+    "preact": "^10.5.15"
+  }
+}

@@ -153,7 +153,7 @@ async function init() {
             { title: "Vue", value: "vue" },
             { title: "React", value: "react" },
             { title: "Svelte", value: "svelte" },
-            // { title: "Preact", value: "preact" },
+            { title: "Preact", value: "preact" },
           ],
           initial: 0,
         },
@@ -220,7 +220,7 @@ async function init() {
 
   // Cleanup.
 
-  if (framework === "react") {
+  if (["react", "preact"].includes(framework)) {
     preOrderDirectoryTraverse(
       root,
       () => {},
