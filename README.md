@@ -11,6 +11,7 @@ An easy way to start a Vite Web Extension project
   - Vue
   - Svelte
   - React
+  - Preact
 
 ## Usage
 
