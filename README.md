@@ -9,6 +9,8 @@ An easy way to start a Vite Web Extension project
 - Choice of framework including:
   - Vanilla
   - Vue
+  - Svelte
+  - React
 
 ## Usage
 

@@ -151,7 +151,7 @@ async function init() {
           choices: [
             { title: "Vanilla (None)", value: "vanilla" },
             { title: "Vue", value: "vue" },
-            // { title: "React", value: "react" },
+            { title: "React", value: "react" },
             { title: "Svelte", value: "svelte" },
             // { title: "Preact", value: "preact" },
           ],
@@ -220,6 +220,32 @@ async function init() {
 
   // Cleanup.
 
+  if (framework === "react") {
+    preOrderDirectoryTraverse(
+      root,
+      () => {},
+      (filepath) => {
+        // update manifest input scripts
+        if (path.basename(filepath).startsWith("manifest")) {
+          const content = fs
+            .readFileSync(filepath, "utf8")
+            .replace(/(contentScript.*)\.js"/g, `$1.jsx"`);
+
+          fs.writeFileSync(filepath, content);
+        }
+
+        // update manifest html files
+        if (filepath.endsWith(".html")) {
+          const content = fs
+            .readFileSync(filepath, "utf8")
+            .replace(".js", ".jsx");
+
+          fs.writeFileSync(filepath, content);
+        }
+      }
+    );
+  }
+
   if (manifestVersion === "2+3") {
     preOrderDirectoryTraverse(
       root,
@@ -277,7 +303,7 @@ async function init() {
         if (path.basename(filepath).startsWith("manifest")) {
           const content = fs
             .readFileSync(filepath, "utf8")
-            .replace(/\.js"/g, `.ts"`);
+            .replace(/\.js/g, `.ts`);
 
           fs.writeFileSync(filepath, content);
         }
@@ -290,11 +316,6 @@ async function init() {
           } else {
             fs.renameSync(filepath, tsFilePath);
           }
-        } else if (path.basename(filepath) === "jsconfig.json") {
-          fs.renameSync(
-            filepath,
-            filepath.replace(/jsconfig\.json$/, "tsconfig.json")
-          );
         }
 
         // update manifest html files
