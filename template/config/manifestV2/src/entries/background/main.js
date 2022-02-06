@@ -1,7 +1,7 @@
 import browser from "webextension-polyfill";
 
-// Enable HMR
 if (import.meta.hot) {
+  // Enable HMR
 }
 
 browser.runtime.onInstalled.addListener(() => {
