@@ -9,7 +9,7 @@ function PageHeader(props) {
 
   return (
     <div>
-      <img src={imageUrl} height="45" />
+      <img src={imageUrl} height="45" alt="" />
       <h1>{props.children}</h1>
       <button type="button" onClick={() => setCount((count) => count + 1)}>
         Count: {count}

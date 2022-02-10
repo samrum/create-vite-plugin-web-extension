@@ -9,7 +9,7 @@
   }
 </script>
 
-<img src={imageUrl} height="45" />
+<img src={imageUrl} height="45" alt="" />
 <h1>
   <slot></slot>
 </h1>
