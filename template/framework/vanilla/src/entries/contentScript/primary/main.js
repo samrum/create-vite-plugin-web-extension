@@ -7,7 +7,7 @@ renderContent(import.meta.CURRENT_CONTENT_SCRIPT_CSS_URL, (appRoot) => {
 
   appRoot.innerHTML = `
     <div class="logo">
-      <img src="${logoImageUrl}" height="50" />
+      <img src="${logoImageUrl}" height="50" alt="" />
     </div>
   `;
 });

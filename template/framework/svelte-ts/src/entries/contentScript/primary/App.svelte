@@ -5,7 +5,7 @@
 </script>
 
 <div class="logo">
-  <img src={logoImageUrl} height="50" />
+  <img src={logoImageUrl} height="50" alt="" />
 </div>
 
 <style>
