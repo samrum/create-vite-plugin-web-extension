@@ -15,7 +15,7 @@
   "devDependencies": {
     "@samrum/vite-plugin-web-extension": "^0.1.1",
     "@types/webextension-polyfill": "^0.8.2",
-    "vite": "2.7.10",
+    "vite": "~2.8.0",
     "web-ext": "^6.6.0"
   },
   "dependencies": {
