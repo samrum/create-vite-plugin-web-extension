@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.9.4](https://github.com/samrum/create-vite-plugin-web-extension/compare/v0.9.3...v0.9.4) (2022-02-13)
+
+### Features
+
+- add alt text to all template img elements ([#8](https://github.com/samrum/create-vite-plugin-web-extension/issues/8)) ([d7b13f5](https://github.com/samrum/create-vite-plugin-web-extension/commit/d7b13f53b775f6e980731e5ad9b7d07807577104))
+- enable dev/HMR for react template content scripts ([#9](https://github.com/samrum/create-vite-plugin-web-extension/issues/9)) ([816f953](https://github.com/samrum/create-vite-plugin-web-extension/commit/816f953c334ad204debf158d3a5502e304746012))
+
 ### [0.9.3](https://github.com/samrum/create-vite-plugin-web-extension/compare/v0.9.2...v0.9.3) (2022-02-06)
 
 ### Features
