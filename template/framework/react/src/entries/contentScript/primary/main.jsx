@@ -1,3 +1,4 @@
+import "../enableDevHmr";
 import React from "react";
 import ReactDOM from "react-dom";
 import renderContent from "../renderContent";
