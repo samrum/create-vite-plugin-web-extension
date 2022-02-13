@@ -5,7 +5,7 @@ function App() {
   const logoImageUrl = new URL(logo, import.meta.url).href;
 
   return (
-    <div class="logo">
+    <div className="logo">
       <img src={logoImageUrl} height="50" alt="" />
     </div>
   );
