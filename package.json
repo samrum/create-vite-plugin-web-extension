@@ -1,6 +1,6 @@
 {
   "name": "@samrum/create-vite-plugin-web-extension",
-  "version": "0.9.5",
+  "version": "0.9.6",
   "description": "An easy way to start a Vite Web Extension project using @samrum/vite-plugin-web-extension",
   "type": "module",
   "bin": {
