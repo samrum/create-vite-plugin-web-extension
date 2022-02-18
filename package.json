@@ -36,8 +36,12 @@
     "firefox",
     "edge",
     "manifest",
-    "vue",
+    "manifest V2",
+    "manifest V3",
+    "react",
+    "preact",
     "svelte",
+    "vue",
     "typescript"
   ],
   "author": "Ruben Medina <dev@rubenmedina.com>",
