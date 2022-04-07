@@ -290,7 +290,8 @@ async function init() {
         if (path.basename(filepath) === "renderContent.js") {
           const content = fs
             .readFileSync(filepath, "utf8")
-            .replace("cssPath,", "cssPath: string,")
+            .replace("cssPaths,", "cssPaths: string[],")
+            .replace("forEach((cssPath)", "forEach((cssPath: string)")
             .replace(
               "render = (_appRoot) => {}",
               "render: (appRoot: HTMLElement) => void"
