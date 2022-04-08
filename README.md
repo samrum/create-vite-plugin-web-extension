@@ -16,7 +16,7 @@ An easy way to start a Vite Web Extension project
 ## Usage
 
 ```sh
-npm init @samrum/vite-plugin-web-extension
+npm init @samrum/vite-plugin-web-extension@latest
 ```
 
 ## Credits
