@@ -1,7 +1,7 @@
 import browser from "webextension-polyfill";
 
 export default async function renderContent(
-  cssPath,
+  cssPaths,
   render = (_appRoot) => {}
 ) {
   const appContainer = document.createElement("div");
@@ -11,15 +11,18 @@ export default async function renderContent(
   const appRoot = document.createElement("div");
 
   if (import.meta.hot) {
-    // @ts-expect-error - for HMR, styles need to be rendered inside shadow root
-    const { addStyleTarget } = await import("/@vite/client");
+    const { addViteStyleTarget } = await import(
+      "@samrum/vite-plugin-web-extension/client"
+    );
 
-    addStyleTarget(shadowRoot);
+    await addViteStyleTarget(shadowRoot);
   } else {
-    const styleEl = document.createElement("link");
-    styleEl.setAttribute("rel", "stylesheet");
-    styleEl.setAttribute("href", browser.runtime.getURL(cssPath));
-    shadowRoot.appendChild(styleEl);
+    cssPaths.forEach((cssPath) => {
+      const styleEl = document.createElement("link");
+      styleEl.setAttribute("rel", "stylesheet");
+      styleEl.setAttribute("href", browser.runtime.getURL(cssPath));
+      shadowRoot.appendChild(styleEl);
+    });
   }
 
   shadowRoot.appendChild(appRoot);
