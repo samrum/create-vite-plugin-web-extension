@@ -362,6 +362,10 @@ async function init() {
   console.log(`  ${bold(green(getCommand(packageManager, "install")))}`);
   console.log(`  ${bold(green(getCommand(packageManager, "build")))}`);
   console.log(`  ${bold(green(getCommand(packageManager, "serve:chrome")))}`);
+
+  console.log(
+    `\nRefer to the README.md file in your project for more usage notes`
+  );
   console.log();
 }
 
