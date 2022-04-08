@@ -1,20 +1,5 @@
 import getCommand from "./getCommand.js";
 
-const sfcTypeSupportDoc = [
-  "",
-  "## Type Support for `.vue` Imports in TS",
-  "",
-  "TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.",
-  "",
-  "If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471) that is more performant. You can enable it by the following steps:",
-  "",
-  "1. Disable the built-in TypeScript Extension",
-  "    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette",
-  "    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`",
-  "2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.",
-  "",
-].join("\n");
-
 export default function generateReadme({
   projectName,
   packageManager,
@@ -27,15 +12,25 @@ export default function generateReadme({
 This template should help get you started developing a ${framework} web extension in Vite.
 
 ## Usage Notes
+
+The extension manifest is defined in \`src/manifest.js\` and used by \`@samrum/vite-plugin-web-extension\` in the vite config.
+
+Background, content scripts, options, and popup entry points exist in the \`src/entries\` directory. 
+
+Content scripts are rendered by \`src/entries/contentScript/renderContent.js\` which renders content within a ShadowRoot
+and handles style injection for HMR and build modes.
+
+Otherwise, the project functions just like a regular Vite project.
+
 ${
   manifestVersion === "2+3"
-    ? "Switch between Manifest V2 and Manifest V3 builds using the MANIFEST_VERSION environment variable in `.env`"
+    ? "To switch between Manifest V2 and Manifest V3 builds, use the MANIFEST_VERSION environment variable defined in `.env`"
     : ""
 }
 
 ${
   manifestVersion === "2+3" || manifestVersion === "3"
-    ? "Hot-Reload during development is currently not supported in Manifest V3. Use watch mode for development."
+    ? "HMR during development is currently not supported in Manifest V3 (see [@samrum/vite-plugin-web-extension](https://github.com/samrum/vite-plugin-web-extension)).\nInstead, when working with Manifest V3 builds, you can use watch mode."
     : ""
 }
 
@@ -53,26 +48,32 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ${getCommand(packageManager, "install")}
 \`\`\`
 
-### Compile and Hot-Reload for Development
+## Commands
+### Build
+#### Development, HMR
 
+Hot Module Reloading is used to load changes inline without requiring extension rebuilds and extension/page reloads
 \`\`\`sh
 ${getCommand(packageManager, "dev")}
 \`\`\`
 
-### Compile and Watch for Development (When Hot-Reload is not available)
+#### Development, Watch
 
+Rebuilds extension on file changes. Requires a reload of the extension (and page reload if using content scripts)
 \`\`\`sh
 ${getCommand(packageManager, "watch")}
 \`\`\`
 
-### Compile and Minify for Production
+#### Production
 
+Minifies and optimizes extension build
 \`\`\`sh
 ${getCommand(packageManager, "build")}
 \`\`\`
 
-### Load complited extension in browser
+### Load extension in browser
 
+Loads the contents of the dist directory into the specified browser
 \`\`\`sh
 ${getCommand(packageManager, "serve:chrome")}
 \`\`\`
