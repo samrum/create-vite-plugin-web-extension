@@ -1,3 +1,4 @@
+// @ts-nocheck
 import RefreshRuntime from "/@react-refresh";
 
 if (import.meta.hot) {

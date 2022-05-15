@@ -1,8 +1,9 @@
 import { useState } from "preact/hooks";
 import "./PageContent.css";
 import logo from "~/assets/logo.svg";
+import type { ComponentChildren } from "preact";
 
-function PageHeader(props) {
+function PageContent(props: { children: ComponentChildren }) {
   const imageUrl = new URL(logo, import.meta.url).href;
 
   const [count, setCount] = useState(0);
@@ -18,4 +19,4 @@ function PageHeader(props) {
   );
 }
 
-export default PageHeader;
+export default PageContent;

@@ -1,3 +1,5 @@
+import pkg from "../package.json";
+
 const sharedManifest = {
   content_scripts: [
     {
@@ -34,14 +36,13 @@ const browserAction = {
   default_popup: "src/entries/popup/index.html",
 };
 
-export const ManifestV2 = {
+const ManifestV2 = {
   ...sharedManifest,
   background: {
     scripts: ["src/entries/background/script.js"],
     persistent: false,
   },
   browser_action: browserAction,
-  manifest_version: 2,
   options_ui: {
     ...sharedManifest.options_ui,
     chrome_style: false,
@@ -49,12 +50,40 @@ export const ManifestV2 = {
   permissions: [...sharedManifest.permissions, "*://*/*"],
 };
 
-export const ManifestV3 = {
+const ManifestV3 = {
   ...sharedManifest,
   action: browserAction,
   background: {
     service_worker: "src/entries/background/serviceWorker.js",
   },
   host_permissions: ["*://*/*"],
-  manifest_version: 3,
 };
+
+export function getManifest(manifestVersion) {
+  const manifest = {
+    author: pkg.author,
+    description: pkg.description,
+    name: pkg.displayName ?? pkg.name,
+    version: pkg.version,
+  };
+
+  if (manifestVersion === 2) {
+    return {
+      ...manifest,
+      ...ManifestV2,
+      manifest_version: manifestVersion,
+    };
+  }
+
+  if (manifestVersion === 3) {
+    return {
+      ...manifest,
+      ...ManifestV3,
+      manifest_version: manifestVersion,
+    };
+  }
+
+  throw new Error(
+    `Missing manifest definition for manifestVersion ${manifestVersion}`
+  );
+}

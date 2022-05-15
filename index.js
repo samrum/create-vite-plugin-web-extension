@@ -246,6 +246,25 @@ async function init() {
     );
   }
 
+  if (framework === "svelte") {
+    preOrderDirectoryTraverse(
+      root,
+      () => {},
+      (filepath) => {
+        // update manifest html files
+        if (path.basename(filepath).startsWith("manifest")) {
+          const content = fs.readFileSync(filepath, "utf8").replace(
+            `import pkg from '../package.json';`,
+            `import { readFileSync } from "fs";
+const pkg = JSON.parse(readFileSync(new URL("./../package.json", import.meta.url).pathname, "utf-8"));`
+          );
+
+          fs.writeFileSync(filepath, content);
+        }
+      }
+    );
+  }
+
   if (manifestVersion === "2+3") {
     preOrderDirectoryTraverse(
       root,
@@ -255,24 +274,18 @@ async function init() {
           const content = fs
             .readFileSync(filepath, "utf8")
             .replace(
+              `import { defineConfig } from "vite";`,
+              `import { defineConfig, loadEnv } from "vite";`
+            )
+            .replace(
               "export default defineConfig(() => {",
               `export default defineConfig(({ mode }) => {
-  const configEnv = loadEnv(mode, process.cwd(), "");
-
-  const manifest = configEnv.MANIFEST_VERSION === "3" ? ManifestV3 : ManifestV2;
+  const env = loadEnv(mode, process.cwd(), "");
 `
             )
             .replace(
-              `import manifest from "./src/manifest";`,
-              `import { ManifestV2, ManifestV3 } from "./src/manifest";`
-            )
-            .replace(
-              `import manifest from "./src/manifest.js";`,
-              `import { ManifestV2, ManifestV3 } from "./src/manifest.js";`
-            )
-            .replace(
-              `import { defineConfig } from "vite";`,
-              `import { defineConfig, loadEnv } from "vite";`
+              `getManifest()`,
+              `getManifest(Number(env.MANIFEST_VERSION))`
             );
 
           fs.writeFileSync(filepath, content);
@@ -304,7 +317,20 @@ async function init() {
         if (path.basename(filepath).startsWith("manifest")) {
           const content = fs
             .readFileSync(filepath, "utf8")
-            .replace(/\.js/g, `.ts`);
+            .replace(/\.js"/g, `.ts"`)
+            .replace(/\.jsx"/g, `.tsx"`)
+            .replace(
+              `getManifest() {`,
+              `getManifest(): ${
+                manifestVersion === "2"
+                  ? "chrome.runtime.ManifestV2"
+                  : "chrome.runtime.ManifestV3"
+              } {`
+            )
+            .replace(
+              `getManifest(manifestVersion) {`,
+              `getManifest(manifestVersion: number): chrome.runtime.ManifestV2 | chrome.runtime.ManifestV3 {`
+            );
 
           fs.writeFileSync(filepath, content);
         }

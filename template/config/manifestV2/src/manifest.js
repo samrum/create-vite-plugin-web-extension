@@ -1,4 +1,6 @@
-export default {
+import pkg from "../package.json";
+
+const manifest = {
   background: {
     scripts: ["src/entries/background/main.js"],
     persistent: false,
@@ -30,7 +32,6 @@ export default {
     256: "icons/256.png",
     512: "icons/512.png",
   },
-  manifest_version: 2,
   options_ui: {
     chrome_style: false,
     open_in_tab: true,
@@ -38,3 +39,14 @@ export default {
   },
   permissions: ["*://*/*"],
 };
+
+export function getManifest() {
+  return {
+    author: pkg.author,
+    description: pkg.description,
+    name: pkg.displayName ?? pkg.name,
+    version: pkg.version,
+    manifest_version: 2,
+    ...manifest,
+  };
+}
