@@ -1,4 +1,6 @@
-export default {
+import pkg from "../package.json";
+
+const manifest = {
   action: {
     default_icon: {
       16: "icons/16.png",
@@ -30,9 +32,19 @@ export default {
     256: "icons/256.png",
     512: "icons/512.png",
   },
-  manifest_version: 3,
   options_ui: {
     page: "src/entries/options/index.html",
     open_in_tab: true,
   },
 };
+
+export function getManifest() {
+  return {
+    author: pkg.author,
+    description: pkg.description,
+    name: pkg.displayName ?? pkg.name,
+    version: pkg.version,
+    manifest_version: 3,
+    ...manifest,
+  };
+}

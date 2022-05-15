@@ -1,9 +1,7 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import webExtension from "@samrum/vite-plugin-web-extension";
-import { readFileSync } from "fs";
-import manifest from "./src/manifest.js";
-const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
+import { getManifest } from "./src/manifest.js";
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
@@ -11,13 +9,7 @@ export default defineConfig(() => {
     plugins: [
       svelte(),
       webExtension({
-        manifest: {
-          author: pkg.author,
-          description: pkg.description,
-          name: pkg.displayName ?? pkg.name,
-          version: pkg.version,
-          ...manifest,
-        },
+        manifest: getManifest(),
       }),
     ],
     resolve: {
