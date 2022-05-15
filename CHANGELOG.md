@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.1](https://github.com/samrum/create-vite-plugin-web-extension/compare/v1.0.0...v1.0.1) (2022-05-15)
+
+### Bug Fixes
+
+- manifest type issues, react issues ([#14](https://github.com/samrum/create-vite-plugin-web-extension/issues/14)) ([5d75bc0](https://github.com/samrum/create-vite-plugin-web-extension/commit/5d75bc0b8754d43b2655116bca190ca76c0a1798))
+
 ## [1.0.0](https://github.com/samrum/create-vite-plugin-web-extension/compare/v0.9.6...v1.0.0) (2022-04-08)
 
 ### Features
