@@ -16,10 +16,10 @@
   "packageManager": "pnpm@7.6.0",
   "scripts": {
     "build": "esbuild --bundle index.js --format=cjs --platform=node --outfile=create.cjs",
+    "build:playground": "node scripts/build-playground.mjs",
     "lint": "prettier --write .",
     "prepare": "husky install",
-    "release": "standard-version --sign",
-    "build-playground": "node scripts/build-playground.mjs"
+    "release": "standard-version --sign"
   },
   "standard-version": {
     "scripts": {
