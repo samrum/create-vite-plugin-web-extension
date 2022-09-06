@@ -18,7 +18,7 @@
     "lint": "prettier --write .",
     "prepare": "husky install",
     "release": "standard-version --sign",
-    "snapshot": "node scripts/snapshot.mjs"
+    "build-playground": "node scripts/build-playground.mjs"
   },
   "standard-version": {
     "scripts": {
