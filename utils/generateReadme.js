@@ -30,7 +30,7 @@ ${
 
 ${
   manifestVersion === "2+3" || manifestVersion === "3"
-    ? "HMR during development is currently not supported in Manifest V3 (see [@samrum/vite-plugin-web-extension](https://github.com/samrum/vite-plugin-web-extension)).\nInstead, when working with Manifest V3 builds, you can use watch mode."
+    ? "HMR during development in Manifest V3 requires Chromium version >= 110.0.5480.0."
     : ""
 }
 

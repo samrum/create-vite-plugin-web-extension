@@ -55,16 +55,16 @@
   },
   "license": "MIT",
   "dependencies": {
-    "kolorist": "^1.5.1",
-    "minimist": "^1.2.5",
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.7",
     "prompts": "^2.4.2"
   },
   "devDependencies": {
     "esbuild": "^0.14.11",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.1.7",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
     "prettier": "2.5.1",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.5.0"
   },
   "lint-staged": {
     "*.{js,ts,vue,json,yml,md}": [
