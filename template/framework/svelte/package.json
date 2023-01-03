@@ -1,8 +1,8 @@
 {
   "type": "module",
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.5",
+    "@sveltejs/vite-plugin-svelte": "^2.0.2",
     "svelte": "^3.50.0",
-    "svelte-preprocess": "^4.10.7"
+    "svelte-preprocess": "^5.0.0"
   }
 }
