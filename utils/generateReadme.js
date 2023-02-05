@@ -53,6 +53,7 @@ ${getCommand(packageManager, "install")}
 #### Development, HMR
 
 Hot Module Reloading is used to load changes inline without requiring extension rebuilds and extension/page reloads
+Currently only works in Chromium based browsers.
 \`\`\`sh
 ${getCommand(packageManager, "dev")}
 \`\`\`
@@ -61,7 +62,7 @@ ${getCommand(packageManager, "dev")}
 
 Rebuilds extension on file changes. Requires a reload of the extension (and page reload if using content scripts)
 \`\`\`sh
-${getCommand(packageManager, "watch")}
+${getCommand(packageManager, "watch --mode development --minify false")}
 \`\`\`
 
 #### Production
