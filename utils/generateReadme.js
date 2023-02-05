@@ -62,7 +62,7 @@ ${getCommand(packageManager, "dev")}
 
 Rebuilds extension on file changes. Requires a reload of the extension (and page reload if using content scripts)
 \`\`\`sh
-${getCommand(packageManager, "watch --mode development --minify false")}
+${getCommand(packageManager, "watch")}
 \`\`\`
 
 #### Production
