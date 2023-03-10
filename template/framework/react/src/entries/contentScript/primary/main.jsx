@@ -1,4 +1,4 @@
-import "../enableDevHmr";
+import "../../enableDevHmr";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import renderContent from "../renderContent";
