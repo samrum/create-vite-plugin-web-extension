@@ -1,6 +1,6 @@
 import util from "util";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 import { exec as execCallback } from "child_process";
 
 const exec = util.promisify(execCallback);
@@ -36,6 +36,8 @@ const builds = [];
     await exec(`cd playground && node ../create.cjs ${buildArgs.join(" ")}`);
 
     await exec(`cd playground/${buildArgs[0]} && pnpm i && pnpm build`);
-    console.log(`cd ${__dirname}/../playground/${buildArgs[0]} && pnpm serve:chrome`);
+    console.log(
+      `cd ${__dirname}/../playground/${buildArgs[0]} && pnpm serve:chrome`
+    );
   }
 })();
