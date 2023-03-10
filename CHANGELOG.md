@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/samrum/create-vite-plugin-web-extension/compare/v1.1.1...v1.1.2) (2023-03-10)
+
+### Bug Fixes
+
+- enable HMR in react JS template without preamble ([#23](https://github.com/samrum/create-vite-plugin-web-extension/issues/23)) ([0bf4698](https://github.com/samrum/create-vite-plugin-web-extension/commit/0bf4698eb5b51e7d6df05c6ec4a4303efedf327f))
+- enableDevHmr import path is wrong ([#24](https://github.com/samrum/create-vite-plugin-web-extension/issues/24)) ([123307d](https://github.com/samrum/create-vite-plugin-web-extension/commit/123307df1320bab5b0dc32dc9deae3b09413190d))
+- support react 18 rendering ([#22](https://github.com/samrum/create-vite-plugin-web-extension/issues/22)) ([df2c25c](https://github.com/samrum/create-vite-plugin-web-extension/commit/df2c25cf47bdaa41fc078fc037b49eb2c7f392b2))
+
 ### [1.1.1](https://github.com/samrum/create-vite-plugin-web-extension/compare/v1.1.0...v1.1.1) (2023-02-05)
 
 ### Bug Fixes
