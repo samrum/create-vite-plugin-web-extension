@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./PageContent.css";
 import logo from "~/assets/logo.svg";
 
-function PageContent(props: { children: React.ReactNode}) {
+function PageContent(props: { children: React.ReactNode }) {
   const imageUrl = new URL(logo, import.meta.url).href;
 
   const [count, setCount] = useState(0);
