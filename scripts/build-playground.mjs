@@ -35,7 +35,9 @@ const builds = [];
   for (const buildArgs of builds) {
     await exec(`cd playground && node ../create.cjs ${buildArgs.join(" ")}`);
 
-    await exec(`cd playground/${buildArgs[0]} && pnpm i && pnpm build`);
+    await exec(
+      `cd playground/${buildArgs[0]} && pnpm i && pnpm build --mode development`
+    );
     console.log(
       `cd ${__dirname}/../playground/${buildArgs[0]} && pnpm serve:chrome`
     );
