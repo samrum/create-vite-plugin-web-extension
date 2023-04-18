@@ -17,7 +17,8 @@
   "scripts": {
     "build": "esbuild --bundle index.js --format=cjs --platform=node --outfile=create.cjs",
     "build:playground": "node scripts/build-playground.mjs",
-    "lint": "prettier --write .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "prepare": "husky install",
     "release": "standard-version --sign",
     "test:playground": "playwright test",
