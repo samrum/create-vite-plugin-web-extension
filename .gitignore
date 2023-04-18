@@ -5,3 +5,6 @@ create.cjs
 **/web-extension/
 .pnpm-debug.log
 /playground/
+/test-results/
+/playwright-report/
+/playwright/.cache/
