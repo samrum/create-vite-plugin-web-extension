@@ -6,7 +6,7 @@ export default async function renderContent(
 ) {
   const appContainer = document.createElement("div");
   const shadowRoot = appContainer.attachShadow({
-    mode: import.meta.env.DEV ? "open" : "closed",
+    mode: import.meta.env.MODE === "development" ? "open" : "closed",
   });
   const appRoot = document.createElement("div");
 

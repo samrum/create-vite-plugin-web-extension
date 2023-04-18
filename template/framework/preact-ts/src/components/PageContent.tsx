@@ -13,7 +13,7 @@ function PageContent(props: { children: ComponentChildren }) {
       <img src={imageUrl} height="45" alt="" />
       <h1>{props.children}</h1>
       <button type="button" onClick={() => setCount((count) => count + 1)}>
-        Count: {count}
+        Clicks: {count}
       </button>
     </div>
   );

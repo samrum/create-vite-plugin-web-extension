@@ -3,7 +3,7 @@ import pkg from "../package.json";
 const manifest = {
   background: {
     scripts: ["src/entries/background/main.js"],
-    persistent: false,
+    persistent: true,
   },
   content_scripts: [
     {
