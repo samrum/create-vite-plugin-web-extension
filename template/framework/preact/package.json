@@ -3,6 +3,6 @@
     "@preact/preset-vite": "^2.5.0"
   },
   "dependencies": {
-    "preact": "^10.13.0"
+    "preact": "^10.13.2"
   }
 }
