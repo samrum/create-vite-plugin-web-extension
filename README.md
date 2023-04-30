@@ -1,5 +1,8 @@
 # @samrum/create-vite-plugin-web-extension
 
+[![npm version](https://img.shields.io/npm/v/@samrum/create-vite-plugin-web-extension)](https://www.npmjs.com/package/@samrum/create-vite-plugin-web-extension)
+[![node compatibility](https://img.shields.io/node/v/@samrum/create-vite-plugin-web-extension)](https://nodejs.org/en/about/releases/)
+
 An easy way to start a Vite Web Extension project
 
 ## Available Project Options
