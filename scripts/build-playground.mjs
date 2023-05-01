@@ -35,10 +35,10 @@ const builds = [];
   }
 
   for (const buildArgs of builds) {
-    spawn(`cd playground && node ../create.cjs ${buildArgs.join(" ")}`, { shell: true });
+    spawn(`cd playground && node ../create.cjs ${buildArgs.join(" ")}`, {
+      shell: true,
+    });
 
-    console.log(
-      resolve(`${__dirname}/../playground/${buildArgs[0]}`)
-    );
+    console.log(resolve(`${__dirname}/../playground/${buildArgs[0]}`));
   }
 })();
