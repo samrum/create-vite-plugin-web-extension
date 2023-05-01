@@ -74,8 +74,8 @@
     "standard-version": "^9.5.0"
   },
   "lint-staged": {
-    "*.{js,ts,vue,json,yml,md}": [
-      "prettier --write"
+    "*": [
+      "prettier --write --cache --ignore-unknown"
     ]
   }
 }
