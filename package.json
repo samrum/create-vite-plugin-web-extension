@@ -22,6 +22,7 @@
     "prepare": "husky install",
     "prepublishOnly": "pnpm run build",
     "release": "standard-version --sign",
+    "run:playground": "node scripts/run-playground.mjs",
     "test:playground": "playwright test",
     "test:playground:ui": "pnpm run test:playground --ui"
   },
