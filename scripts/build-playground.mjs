@@ -1,7 +1,7 @@
 import util from "util";
 import { fileURLToPath } from "url";
-import { dirname } from "path";
-import { exec as execCallback } from "child_process";
+import { dirname, resolve } from "path";
+import { exec as execCallback, spawn } from "child_process";
 
 const exec = util.promisify(execCallback);
 
@@ -14,7 +14,9 @@ const manifestVersions = ["2", "3", "2+3"];
 const builds = [];
 
 (async () => {
-  await exec("pnpm build");
+  const { stdout } = await exec("pnpm build");
+  console.log(stdout);
+
   await exec("mkdir -p playground && rm -rf playground/*");
 
   for (const framework of frameworks) {
@@ -33,13 +35,10 @@ const builds = [];
   }
 
   for (const buildArgs of builds) {
-    await exec(`cd playground && node ../create.cjs ${buildArgs.join(" ")}`);
+    spawn(`cd playground && node ../create.cjs ${buildArgs.join(" ")}`, {
+      shell: true,
+    });
 
-    await exec(
-      `cd playground/${buildArgs[0]} && pnpm i && pnpm build --mode development`
-    );
-    console.log(
-      `cd ${__dirname}/../playground/${buildArgs[0]} && pnpm serve:chrome`
-    );
+    console.log(resolve(`${__dirname}/../playground/${buildArgs[0]}`));
   }
 })();

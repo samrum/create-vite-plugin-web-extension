@@ -22,6 +22,7 @@
     "prepare": "husky install",
     "prepublishOnly": "pnpm run build",
     "release": "standard-version --sign",
+    "run:playground": "node scripts/run-playground.mjs",
     "test:playground": "playwright test",
     "test:playground:ui": "pnpm run test:playground --ui"
   },
@@ -73,8 +74,8 @@
     "standard-version": "^9.5.0"
   },
   "lint-staged": {
-    "*.{js,ts,vue,json,yml,md}": [
-      "prettier --write"
+    "*": [
+      "prettier --write --cache --ignore-unknown"
     ]
   }
 }
