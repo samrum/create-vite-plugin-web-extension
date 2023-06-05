@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/samrum/create-vite-plugin-web-extension/compare/v1.1.4...v2.0.0) (2023-06-05)
+
+### ⚠ BREAKING CHANGES
+
+- deprecate node 14, minimum version is now node 16 (#34)
+
+- deprecate node 14, minimum version is now node 16 ([#34](https://github.com/samrum/create-vite-plugin-web-extension/issues/34)) ([4054c34](https://github.com/samrum/create-vite-plugin-web-extension/commit/4054c34421112c56b1569a1cfeacf9f2d08d7669))
+
 ### [1.1.4](https://github.com/samrum/create-vite-plugin-web-extension/compare/v1.1.3...v1.1.4) (2023-04-24)
 
 ### [1.1.3](https://github.com/samrum/create-vite-plugin-web-extension/compare/v1.1.2...v1.1.3) (2023-04-10)
