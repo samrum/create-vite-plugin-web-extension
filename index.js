@@ -328,6 +328,10 @@ const pkg = JSON.parse(readFileSync(new URL("./../package.json", import.meta.url
               } {`
             )
             .replace(
+              `const sharedManifest`,
+              `const sharedManifest: Partial<chrome.runtime.ManifestBase>`
+            )
+            .replace(
               `getManifest(manifestVersion) {`,
               `getManifest(manifestVersion: number): chrome.runtime.ManifestV2 | chrome.runtime.ManifestV3 {`
             );
