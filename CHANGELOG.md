@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/samrum/create-vite-plugin-web-extension/compare/v2.0.0...v2.0.1) (2023-06-09)
+
+### Bug Fixes
+
+- **v2+v3-ts:** add type declaration for sharedManifest ([#39](https://github.com/samrum/create-vite-plugin-web-extension/issues/39)) ([8fab389](https://github.com/samrum/create-vite-plugin-web-extension/commit/8fab38949472fec8dab6a2c27242127a1b2f6854))
+
 ## [2.0.0](https://github.com/samrum/create-vite-plugin-web-extension/compare/v1.1.4...v2.0.0) (2023-06-05)
 
 ### ⚠ BREAKING CHANGES
