@@ -7,7 +7,7 @@ const exec = util.promisify(execCallback);
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const frameworks = ["vanilla", "vue", "svelte", "react", "preact"];
+const frameworks = ["preact", "react", "solid", "svelte", "vanilla", "vue"];
 
 const manifestVersions = ["2", "3", "2+3"];
 

@@ -150,10 +150,11 @@ async function init() {
           message: "Framework:",
           choices: [
             { title: "Vanilla (None)", value: "vanilla" },
-            { title: "Vue", value: "vue" },
-            { title: "React", value: "react" },
-            { title: "Svelte", value: "svelte" },
             { title: "Preact", value: "preact" },
+            { title: "React", value: "react" },
+            { title: "Solid", value: "solid" },
+            { title: "Svelte", value: "svelte" },
+            { title: "Vue", value: "vue" },
           ],
           initial: 0,
         },
@@ -220,7 +221,7 @@ async function init() {
 
   // Cleanup.
 
-  if (["react", "preact"].includes(framework)) {
+  if (["react", "preact", "solid"].includes(framework)) {
     preOrderDirectoryTraverse(
       root,
       () => {},
