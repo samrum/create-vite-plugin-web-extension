@@ -10,11 +10,12 @@ An easy way to start a Vite Web Extension project
 - Manifest V2, Manifest V3, or Both
 - TypeScript
 - Choice of framework including:
+  - Preact
+  - React
+  - Solid
+  - Svelte
   - Vanilla
   - Vue
-  - Svelte
-  - React
-  - Preact
 
 ## Usage
 

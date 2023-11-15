@@ -48,7 +48,8 @@
     "preact",
     "svelte",
     "vue",
-    "typescript"
+    "typescript",
+    "solid"
   ],
   "author": "Ruben Medina <dev@rubenmedina.com>",
   "repository": {
