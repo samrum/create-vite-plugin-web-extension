@@ -24,7 +24,8 @@
     "release": "standard-version --sign",
     "run:playground": "node scripts/run-playground.mjs",
     "test:playground": "playwright test",
-    "test:playground:ui": "pnpm run test:playground --ui"
+    "test:playground:ui": "pnpm run test:playground --ui",
+    "build-and-test-playground": "pnpm build:playground && pnpm run:playground install && pnpm run:playground build && pnpm test:playground"
   },
   "standard-version": {
     "scripts": {
@@ -66,11 +67,11 @@
     "prompts": "^2.4.2"
   },
   "devDependencies": {
-    "@playwright/test": "^1.33.0",
-    "@types/node": "^18.16.3",
-    "esbuild": "^0.17.18",
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.4",
+    "esbuild": "^0.19.9",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
+    "lint-staged": "^15.2.0",
     "prettier": "2.8.8",
     "standard-version": "^9.5.0"
   },

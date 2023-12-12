@@ -4,6 +4,7 @@
   "author": "@samrum/vite-plugin-web-extension",
   "version": "1.0.0",
   "description": "A @samrum/vite-plugin-web-extension web extension",
+  "type": "module",
   "scripts": {
     "build": "vite build",
     "watch": "vite build --watch --mode development --minify false",
@@ -14,10 +15,10 @@
   "license": "MIT",
   "devDependencies": {
     "@samrum/vite-plugin-web-extension": "^5.0.0",
-    "@types/chrome": "^0.0.228",
-    "@types/webextension-polyfill": "^0.10.0",
-    "vite": "~4.3.3",
-    "web-ext": "^7.6.2"
+    "@types/chrome": "^0.0.254",
+    "@types/webextension-polyfill": "^0.10.6",
+    "vite": "^5.0.0",
+    "web-ext": "^7.8.0"
   },
   "dependencies": {
     "webextension-polyfill": "^0.10.0"
