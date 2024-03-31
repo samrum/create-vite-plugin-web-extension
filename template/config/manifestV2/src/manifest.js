@@ -42,7 +42,9 @@ const manifest = {
 
 export function getManifest() {
   return {
-    author: pkg.author,
+    author: {
+      email: pkg.author.email,
+    },
     description: pkg.description,
     name: pkg.displayName ?? pkg.name,
     version: pkg.version,
