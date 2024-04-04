@@ -1,10 +1,7 @@
 {
   "name": "vite-web-extension",
   "displayName": "Vite Web Extension",
-  "author": {
-    "name": "@samrum/vite-plugin-web-extension",
-    "email": "dev@rubenmedina.com"
-  },
+  "author": "@samrum/vite-plugin-web-extension",
   "version": "1.0.0",
   "description": "A @samrum/vite-plugin-web-extension web extension",
   "type": "module",

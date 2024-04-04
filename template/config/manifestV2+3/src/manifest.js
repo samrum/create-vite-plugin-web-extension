@@ -61,9 +61,6 @@ const ManifestV3 = {
 
 export function getManifest(manifestVersion) {
   const manifest = {
-    author: {
-      email: pkg.author.email,
-    },
     description: pkg.description,
     name: pkg.displayName ?? pkg.name,
     version: pkg.version,
