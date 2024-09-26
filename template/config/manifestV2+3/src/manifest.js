@@ -61,7 +61,6 @@ const ManifestV3 = {
 
 export function getManifest(manifestVersion) {
   const manifest = {
-    author: pkg.author,
     description: pkg.description,
     name: pkg.displayName ?? pkg.name,
     version: pkg.version,

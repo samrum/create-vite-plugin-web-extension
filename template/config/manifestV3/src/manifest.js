@@ -40,7 +40,6 @@ const manifest = {
 
 export function getManifest() {
   return {
-    author: pkg.author,
     description: pkg.description,
     name: pkg.displayName ?? pkg.name,
     version: pkg.version,
